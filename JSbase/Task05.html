@@ -25,6 +25,7 @@
     <button id="left-out">左侧出</button>
     <button id="right-out">右测出</button>
 	<button id="sort">排序</button>
+	<button id="insert">插入60条数据</button>
     <div id="spanBox"></div>
     <script type="text/javascript">
         (function () {
@@ -32,6 +33,7 @@
             var right_in = document.getElementById("right-in");
             var left_out = document.getElementById("left-out");
             var right_out = document.getElementById("right-out");
+			var insert = document.getElementById("insert");
             var reg = /^(?:[1-9]\d|100)$/;
 			stateArr = []; // save change state
 			tmpColor = []; // 当前交换元素——颜色控制
@@ -62,6 +64,9 @@
             };
 			sort.onclick = function(){
 				sortDESC();
+			};
+			insert.onclick = function(){
+				insertNum();
 			}
         })();
         /**
@@ -69,24 +74,29 @@
          *  @param value
          */
         function createSpan(value) {
-            var sp = document.createElement("span");
-			sp.style.height = value + "px";
-            return sp;
+            var sp_ele = document.createElement("span");
+			sp_ele.style.height = value + "px";
+            return sp_ele;
         }
         /**
          * appendTo spanBox
          * @param type left or right
          */
         function add(type) {
-            var sp = createSpan(input_text.value);
+			if(sp.length >= 60)
+			{
+				alert("Quantity exceeds");
+				return;
+			}
+            var sp_ele = createSpan(input_text.value);
             if(type == "left"){
-                span_box.insertBefore(sp,span_box.childNodes[0]);
+                span_box.insertBefore(sp_ele,span_box.childNodes[0]);
             }
             else{
-                span_box.appendChild(sp);
+                span_box.appendChild(sp_ele);
             }
             // span click event
-            sp.onclick = function () {
+            sp_ele.onclick = function () {
                 alert(parseInt(this.style.height));
                 span_box.removeChild(this);
             }
@@ -164,6 +174,15 @@
 			}else{
 				clearInterval(time);
 			}			
+		}
+		/**
+		 * insert 60 number		
+		 */
+		function insertNum(){
+			for(var i=0; i<60;i++){
+				input_text.value = parseInt(Math.random(1)*100+1);
+				add("right")
+			}
 		}
     </script>
 </body>
