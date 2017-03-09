@@ -1,35 +1,106 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    <title>IFE JavaScript Task 01</title>
-</head>
-<body>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="DitHome's Blog">
+    <meta name="author" content="DitHome">
+    <link rel="icon" href="./favicon.ico">
 
-<label>请输入北京今天空气质量：<input id="aqi-input" type="text"></label>
-<button id="button">确认填写</button>
+    <title>Blog Template for Bootstrap</title>
 
-<div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
+    <!-- Bootstrap core CSS -->
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
 
-<script type="text/javascript">
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
 
-    (function() {
-        /*
-         在注释下方写下代码
-         给按钮button绑定一个点击事件
-         在事件处理函数中
-         获取aqi-input输入的值，并显示在aqi-display中
-         */
-        var btn = document.getElementById("button");
-        var aqi_input = document.getElementById("aqi-input");
-        var aqi_display = document.getElementById("aqi-display");
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-        btn.onclick = function () {
-            aqi_display.innerHTML = aqi_input.value;
-        }
+  <body>
 
-    })();
+    <div class="jumbotron">
+      <div class="container">
+        <h1>DitHome</h1>
+        <p class="lead blog-description">IFE Task</p>
+      </div>
+    </div>
 
-</script>
-</body>
+    <div class="container">
+	
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">鏂屾枌瀛﹂櫌-JS</h2>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Task</th>
+                  <th>Address</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td><a href="#">鏌ョ湅璇︽儏</a></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td><a href="#">鏌ョ湅璇︽儏</a></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td><a href="#">鏌ョ湅璇︽儏</a></td>
+                </tr>
+              </tbody>
+			</table>
+          </div><!-- /.blog-post -->
+		  
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>About</h4>
+            <p><em>IFE Task</em> Link</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>Archives</h4>
+            <ol class="list-unstyled">
+            </ol>
+          </div>
+          <div class="sidebar-module">
+            <h4>Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">GitHub</a></li>
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <footer class="blog-footer">
+      
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="jquery-1.10.2.min.js"></script>  
+    <script src="./dist/js/bootstrap.min.js"></script>
+  </body>
 </html>
